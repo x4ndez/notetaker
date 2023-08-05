@@ -6,12 +6,16 @@ const dbPath = path.join(__dirname, "../../../../server/db/db.json");
 
 let idArray = [];
 
+// GET
+
 notes.get("/", async (req, res) => {
 
     const dbRead = await readFile(dbPath);
     res.json(dbRead);
 
 });
+
+// POST
 
 notes.post("/", (req, res) => {
 
@@ -45,6 +49,8 @@ notes.post("/", (req, res) => {
     }
 
 });
+
+// DELETE
 
 notes.delete("/:id", async (req, res) => {
 

@@ -3,12 +3,24 @@
 ![Screenshot of application](./screenshot.gif)
 
 ## Description
-This application is the week 11 project of the edX/Monash bootcamp with a focus on X.  The task was to build an SVG based off user input from the terminal using the Inquirer module.  I personally liked this method of coding, as it kept everything organised and reusable.  As for testing the application, I used the jest module.  During the week when we were learning to use jest, I was fairly confused for why we were using it, but after I took some time to read over it and understand the syntax, it all made sense and I was able to feature it into my application without any troubles!
+This application is the week 11 project of the edX/Monash bootcamp with a focus on express.js.  The task was to build a note taking app that utilises GET, POST and DELETE HTTP methods.  I used modular routing and made a folder system to keep things a little more organised instead of putting all routes in the same folder.  I also used in-built middleware and hope to add my own custom middleware to console log different events.  I got good experience using Insomnia, through testing all my API calls, and using it to troubleshoot at some points.  I had some fun making a 9-digit ID creator function, which I was happy that I could use the array filter method because I'd just spent an hour using it and pulling my hair out over AlgoExpert challenges.  Although I used arrays for this function, I probably didn't need to... but arrays are king.
 
 The acceptance criteria of this project were as follows:
 
 ```md
-
+GIVEN a note-taking application
+WHEN I open the Note Taker
+THEN I am presented with a landing page with a link to a notes page
+WHEN I click on the link to the notes page
+THEN I am presented with a page with existing notes listed in the left-hand column, plus empty fields to enter a new note title and the note’s text in the right-hand column
+WHEN I enter a new note title and the note’s text
+THEN a Save icon appears in the navigation at the top of the page
+WHEN I click on the Save icon
+THEN the new note I have entered is saved and appears in the left-hand column with the other existing notes
+WHEN I click on an existing note in the list in the left-hand column
+THEN that note appears in the right-hand column
+WHEN I click on the Write icon in the navigation at the top of the page
+THEN I am presented with empty fields to enter a new note title and the note’s text in the right-hand column
 ```
 
 ## Table of Contents
