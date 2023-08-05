@@ -6,10 +6,11 @@ const dbPath = path.join(__dirname, "../../../../server/db/db.json");
 
 //path.join(__dirname, "../../../../server/db/db.json")
 
-notes.get("/", (req, res) => {
+notes.get("/", async (req, res) => {
 
-    console.log("req received");
-    res.sendFile(dbPath);
+    const dbRead = await readFile(dbPath);
+
+    res.json(dbRead);
 
 });
 
@@ -17,7 +18,7 @@ notes.post("/", (req, res) => {
 
     const { title, text } = req.body;
 
-    if (title && body) {
+    if (title && text) {
 
         readAndAppend(req.body);
 
@@ -46,13 +47,25 @@ async function readAndAppend(newNote) {
     const dbRead = await fs.readFile(dbPath, "utf8");
 
     // Convert Database from string to object
-    dbReadObj = JSON.parse(dbRead);
+    const dbReadObj = JSON.parse(dbRead);
 
     // Add new note to database object
     dbReadObj.push(newNote);
 
     // Save updated database to database
     const dbWrite = await fs.writeFile(dbPath, JSON.stringify(dbReadObj));
+
+}
+
+async function readFile(file) {
+
+    //Read Database
+    const dbRead = await fs.readFile(file, "utf8");
+
+    // Convert Database from string to object
+    const dbReadObj = JSON.parse(dbRead);
+
+    return dbReadObj;
 
 }
 
