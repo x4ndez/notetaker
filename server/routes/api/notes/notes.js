@@ -50,9 +50,18 @@ notes.post("/", (req, res) => {
 
 notes.delete("/:id", async (req, res) => {
 
-    const dbRead = await readFile(dbPath);
+    const dbReadObj = await readFile(dbPath);
 
-    const dbReadObj = JSON.parse(dbRead);
+    // create a new database object without the note to be deleted
+    let updatedDb = dbReadObj.filter((val, i, arr) => {
+
+        if (arr[i].id != req.params.id) return true;
+
+    });
+
+    // Save updated database object to database
+    const dbWrite = await fs.writeFile(dbPath, JSON.stringify(updatedDb));
+
 
 });
 
@@ -63,7 +72,7 @@ async function readAndAppend(newNote) {
     // Add new note to database object
     dbReadObj.push(newNote);
 
-    // Save updated database to database
+    // Save updated database object to database
     const dbWrite = await fs.writeFile(dbPath, JSON.stringify(dbReadObj));
 
 }
