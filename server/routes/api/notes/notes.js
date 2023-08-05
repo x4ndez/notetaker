@@ -21,7 +21,15 @@ notes.post("/", (req, res) => {
 
     if (title && text) {
 
-        readAndAppend(req.body);
+        const newNote = {
+
+            title: title,
+            text: text,
+            id: createId(),
+
+        }
+
+        readAndAppend(newNote);
 
         const response = {
 
