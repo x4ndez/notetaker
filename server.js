@@ -1,8 +1,6 @@
-// /api
-// /api/notes
-
 const express = require("express");
 const path = require("path");
+
 const api = require("./server/routes/api/api.js");
 
 const PORT = process.env.PORT || 5001;
@@ -18,7 +16,6 @@ app.use(express.static("public"));
 // GET Notes page
 app.get("/notes", (req, res) => {
 
-    console.log(`${req.method}, ${req.ip}, ${req.path}`);
     res.sendFile(path.join(__dirname, "/public/notes.html"));
 
 
@@ -27,7 +24,6 @@ app.get("/notes", (req, res) => {
 // GET Homepage
 app.get("*", (req, res) => {
 
-    console.log(`${req.method}, ${req.ip}, ${req.path}`);
     res.sendFile(path.join(__dirname, "/public/index.html"));
 
 
