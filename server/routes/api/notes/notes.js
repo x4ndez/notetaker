@@ -62,6 +62,9 @@ notes.delete("/:id", async (req, res) => {
     // Save updated database object to database
     const dbWrite = await fs.writeFile(dbPath, JSON.stringify(updatedDb));
 
+    // send response 200
+    res.status(200).send("Note deleted successfully.");
+
 
 });
 
