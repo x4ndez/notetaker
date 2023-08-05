@@ -13,6 +13,8 @@ app.use(express.urlencoded({ extended: true }));
 
 app.use("/api", api);
 
+app.use(express.static("public"));
+
 // GET Notes page
 app.get("/notes", (req, res) => {
 
@@ -31,7 +33,7 @@ app.get("*", (req, res) => {
 
 });
 
-app.use(express.static("public"));
+
 
 app.listen(PORT, () => {
 

@@ -4,7 +4,7 @@ const path = require("path");
 notes.get("/", (req, res) => {
 
     // console.log(path.join(__dirname, "../../../../public/notes.html"));
-    // res.sendFile(path.join(__dirname, "../../../../public/notes.html"));
+    res.sendFile(path.join(__dirname, "../../../../server/db/db.json"));
 
 });
 
