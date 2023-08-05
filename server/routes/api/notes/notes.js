@@ -6,10 +6,11 @@ const dbPath = path.join(__dirname, "../../../../server/db/db.json");
 
 //path.join(__dirname, "../../../../server/db/db.json")
 
+let idArray = [[1, 2, 3, 4, 5, 6, 7, 8, 9]];
+
 notes.get("/", async (req, res) => {
 
     const dbRead = await readFile(dbPath);
-
     res.json(dbRead);
 
 });
@@ -37,7 +38,13 @@ notes.post("/", (req, res) => {
 
     }
 
+});
 
+notes.delete("/:id", async (req, res) => {
+
+    const dbRead = await readFile(dbPath);
+
+    const dbReadObj = JSON.parse(dbRead);
 
 });
 
@@ -64,5 +71,62 @@ async function readFile(file) {
     return dbReadObj;
 
 }
+
+function idRoll() {
+
+    let id = [];
+
+    for (let i = 0; i < 9; i++) {
+
+        id.push(Math.floor(Math.random() * 10));
+
+    }
+    // console.log(id);
+
+    return id;
+
+}
+
+function checkId(id) {
+
+    let idCheck = 0;
+
+    for (const idArrItem of idArray) {
+
+        for (let i = 0; i < id.length; i++) {
+
+            if (id[i] === idArrItem[i]) idCheck++;
+
+        }
+
+    }
+
+    if (idCheck === 9) return null;
+    else {
+
+        return id.join("");
+
+    }
+
+}
+
+function createId() {
+
+    //create 9 digit id number
+    const id = idRoll();
+    //check if any item in the array has the same number
+    const checkedId = checkId(id);
+    //if the checked id has the same id as a number in the array, create a new id until the id is unique
+    while (checkedId === null) {
+
+        checkedId = checkId(id);
+
+    }
+
+    return checkedId;
+
+}
+
+
 
 module.exports = notes;
