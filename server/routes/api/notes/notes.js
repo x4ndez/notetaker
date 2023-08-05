@@ -4,9 +4,7 @@ const fs = require("fs/promises");
 
 const dbPath = path.join(__dirname, "../../../../server/db/db.json");
 
-//path.join(__dirname, "../../../../server/db/db.json")
-
-let idArray = [[1, 2, 3, 4, 5, 6, 7, 8, 9]];
+let idArray = [];
 
 notes.get("/", async (req, res) => {
 
@@ -101,7 +99,6 @@ function idRoll() {
         id.push(Math.floor(Math.random() * 10));
 
     }
-    // console.log(id);
 
     return id;
 
@@ -146,7 +143,5 @@ function createId() {
     return checkedId;
 
 }
-
-
 
 module.exports = notes;
