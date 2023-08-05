@@ -43,11 +43,7 @@ notes.post("/", (req, res) => {
 
 async function readAndAppend(newNote) {
 
-    //Read Database
-    const dbRead = await fs.readFile(dbPath, "utf8");
-
-    // Convert Database from string to object
-    const dbReadObj = JSON.parse(dbRead);
+    const dbReadObj = await readFile(dbPath);
 
     // Add new note to database object
     dbReadObj.push(newNote);
