@@ -40,7 +40,7 @@ Deployed via Heroku at <https://infinite-wave-89582-130278b6b9b3.herokuapp.com/>
 GitHub Repository: <https://github.com/x4ndez/notetaker>
 
 ## Usage
-Click "Get Started", to begin taking notes that anyone with this link can access! Click the + icon in the top right hand corner and store all the credentials for all your apps! You can save a note by clicking the save icon that will appear after you begin typing a note body.  Once your credentials are saved, they are stored forever in the land of the internet, so you better change all your passwords now!  ...Ha!  There's a delete button, but we can't promise your credentials haven't been stolen by some sneaky online cyber-scraping gypsy wizards.  We hope you've had a good experience with "Note Taker" - The most exciting note taker from 0.0.0.0 to 255.255.255.255!
+Click "Get Started" to begin taking notes that anyone with this link can access! Click the + icon in the top right hand corner and store all the credentials for all your apps! You can save a note by clicking the save icon that will appear after you begin typing a note body.  Once your credentials are saved, they are stored forever in the land of the internet, so you better change all your passwords now!  ...Ha!  There's a delete button, but we can't promise your credentials haven't been stolen by some sneaky online cyber-scraping gypsy wizards.  We hope you've had a good experience with "Note Taker" - The most exciting note taker from 0.0.0.0 to 255.255.255.255!
 
 ## License
 ![License Badge: License](https://img.shields.io/badge/License-MIT-blue)<br>
