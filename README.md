@@ -47,7 +47,7 @@ Click "Get Started" to begin taking notes that anyone with this link can access!
 This project is covered under the MIT License.
 
 ## Contribution
-x4ndez: <https://github.com/x4ndez>
+x4ndez: <https://github.com/x4ndez><br>
 Starter code obtained from: <https://github.com/coding-boot-camp/miniature-eureka>
 
 ## Questions
