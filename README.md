@@ -48,6 +48,7 @@ This project is covered under the MIT License.
 
 ## Contribution
 x4ndez: <https://github.com/x4ndez>
+Starter code obtained from: <https://github.com/coding-boot-camp/miniature-eureka>
 
 ## Questions
 Questions may be directed to my LinkedIn: <https://www.linkedin.com/in/alexandernanfro/>.
