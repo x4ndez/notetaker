@@ -2,13 +2,14 @@ const express = require("express");
 const path = require("path");
 
 const api = require("./server/routes/api/api.js");
+const { cLog } = require("./middleware/clog.js");
 
 const PORT = process.env.PORT || 5001;
 const app = express();
 
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
-
+app.use(cLog);
 app.use("/api", api);
 
 app.use(express.static("public"));
